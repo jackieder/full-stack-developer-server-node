@@ -1,5 +1,6 @@
-import posts from "./tuits.js";
-let tuits = posts;
+// import posts from "./tuits.js";
+import tuitsDao from "../../tuits/tuits-dao.js";
+// let tuits = posts;
 
 const createTuit = (req, res) => {
     const newTuit = req.body;
@@ -9,8 +10,10 @@ const createTuit = (req, res) => {
     res.json(newTuit);
 }
 
-const findAllTuits = (req, res) =>
+const findAllTuits = (req, res) => {
+    const tuits = await tuitsDao.findAllTuits()
     res.json(tuits);
+}
 const updateTuit = (req, res) => {
     const tuitdIdToUpdate = req.params.tid;
     const updatedTuit = req.body;
