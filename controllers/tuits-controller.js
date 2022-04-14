@@ -1,6 +1,4 @@
-// import posts from "./tuits.js";
-import tuitsDao from "../../tuits/tuits-dao.js";
-// let tuits = posts;
+import tuitsDao from "../tuits-dao.js";
 
 const createTuit = async (req, res) => {
     const newTuit = req.body;
