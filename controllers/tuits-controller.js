@@ -14,7 +14,7 @@ const findAllTuits = async (req, res) => {
     res.json(tuits);
 }
 const updateTuit = async (req, res) => {
-    const tuitdIdToUpdate = req.params.tuit._id;
+    const tuitdIdToUpdate = req.params._id;
     const updatedTuit = req.body;
     const status = await tuitsDao.updateTuit(tuitdIdToUpdate, updatedTuit);
 
@@ -22,7 +22,7 @@ const updateTuit = async (req, res) => {
     res.send(status);
 }
 const deleteTuit = async (req, res) => {
-    const tuitdIdToDelete = req.params.tuit._id;
+    const tuitdIdToDelete = req.params._id;
     const status = await tuitsDao.deleteTuit(tuitdIdToDelete);
 
     // tuits = tuits.filter(t => t._id !== tuitdIdToDelete);
